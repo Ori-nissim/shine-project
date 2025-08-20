@@ -1,0 +1,74 @@
+{
+  "key": "Ori-Nissim",
+  "template": "inspiration-site",
+  "data": {
+    "hero": {
+      "title": "Professional Web Development",
+      "subtitle": "Creating beautiful, functional websites that drive results",
+      "ctaText": "Get Started",
+      "ctaLink": "#contact"
+    },
+    "about": {
+      "title": "About Our Services",
+      "description": "We specialize in creating modern, responsive websites that help businesses grow. Our team of experienced developers and designers work together to deliver exceptional results.",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500"
+    },
+    "services": {
+      "title": "Our Services",
+      "description": "Comprehensive web development solutions tailored to your needs",
+      "items": [
+        {
+          "title": "Website Design",
+          "description": "Beautiful, modern designs that capture your brand essence"
+        },
+        {
+          "title": "Web Development",
+          "description": "Custom websites built with the latest technologies"
+        },
+        {
+          "title": "E-commerce Solutions",
+          "description": "Online stores that convert visitors into customers"
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "Client Testimonials",
+      "description": "What our clients say about our work",
+      "items": [
+        {
+          "name": "Sarah Johnson",
+          "role": "CEO, TechStart",
+          "content": "Amazing work! Our new website has increased our conversions by 300%."
+        },
+        {
+          "name": "Mike Chen",
+          "role": "Founder, DesignCo",
+          "content": "Professional, responsive, and delivered on time. Highly recommended!"
+        }
+      ]
+    },
+    "contact": {
+      "title": "Get In Touch",
+      "description": "Ready to start your project? Contact us today!",
+      "email": "contact@webdev.com",
+      "phone": "+1-555-0123",
+      "address": "123 Web Street, Digital City"
+    },
+    "footer": {
+      "tagline": "Building the future, one website at a time",
+      "socialLinks": [
+        {
+          "platform": "LinkedIn",
+          "url": "https://linkedin.com/company/webdev"
+        },
+        {
+          "platform": "Twitter",
+          "url": "https://twitter.com/webdev"
+        }
+      ]
+    }
+  },
+  "whatsappNumber": "972526495077",
+  "createdAt": "2025-07-26T11:25:23.836Z",
+  "updatedAt": "2025-07-26T11:25:23.836Z"
+}

@@ -1,9 +1,7 @@
 import './globals.css';
 import type { Metadata, Viewport } from 'next';
 import { Manrope, Bebas_Neue } from 'next/font/google';
-import { getUser, getTeamForUser } from '@/lib/db/queries';
 import { SWRConfig } from 'swr';
-import { LanguageProvider } from '@/lib/language-context';
 
 export const metadata: Metadata = {
   title: 'Shine - Make Your Brand SHINE!',
@@ -35,21 +33,12 @@ export default function RootLayout({
       dir="ltr"
       className={`${manrope.className} ${bebasNeue.variable}`}
     >
-      <body className="min-h-[100dvh]">
-        <SWRConfig
-          value={{
-            fallback: {
-              // We do NOT await here
-              // Only components that read this data will suspend
-              '/api/user': getUser(),
-              '/api/team': getTeamForUser()
-            }
-          }}
-        >
-          <LanguageProvider>
+      <body className="min-h-[100vh]">
+        <div className="flex flex-col min-h-screen">
+          <main >
             {children}
-          </LanguageProvider>
-        </SWRConfig>
+          </main>
+        </div>
       </body>
     </html>
   );

@@ -1,0 +1,135 @@
+{
+  "key": "avi-fix",
+  "template": "inspiration-site",
+  "data": {
+    "hero": {
+      "title": "FixItWithAvi - Your Trusted Home Repair Expert",
+      "subtitle": "Professional appliance repair and handyman services in Givatayim. Fast, reliable, and honest solutions for all your home maintenance needs.",
+      "ctaText": "Get Free Quote",
+      "ctaLink": "#contact"
+    },
+    "about": {
+      "title": "About Avi Ben-David",
+      "description": "With over 15 years of experience in home appliance repair and general handyman services, I've been helping residents of Givatayim and surrounding areas keep their homes running smoothly. I believe in honest pricing, quality workmanship, and building lasting relationships with my clients. Whether it's a broken washing machine, a leaky faucet, or any other home repair need, you can count on me to get the job done right the first time.",
+      "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+    },
+    "services": {
+      "title": "Our Services",
+      "description": "Comprehensive home repair and maintenance services to keep your home in perfect condition",
+      "items": [
+        {
+          "title": "Appliance Repair",
+          "description": "Expert repair services for washing machines, dryers, refrigerators, dishwashers, ovens, and all major home appliances. Same-day service available for urgent repairs.",
+          "icon": "🔧"
+        },
+        {
+          "title": "Plumbing Services",
+          "description": "Fix leaky faucets, clogged drains, running toilets, and other plumbing issues. Emergency plumbing services available 24/7.",
+          "icon": "🚰"
+        },
+        {
+          "title": "Electrical Work",
+          "description": "Safe and reliable electrical repairs, outlet installations, light fixture replacements, and electrical troubleshooting for your home.",
+          "icon": "⚡"
+        },
+        {
+          "title": "General Handyman",
+          "description": "From furniture assembly to minor carpentry, painting touch-ups, and general home maintenance. No job is too small.",
+          "icon": "🏠"
+        },
+        {
+          "title": "Preventive Maintenance",
+          "description": "Regular maintenance programs to prevent costly repairs and extend the life of your appliances and home systems.",
+          "icon": "🛠️"
+        },
+        {
+          "title": "Emergency Repairs",
+          "description": "24/7 emergency repair services for urgent situations. Quick response times and reliable solutions when you need them most.",
+          "icon": "🚨"
+        }
+      ]
+    },
+    "whyChooseUs": {
+      "title": "Why Choose FixItWithAvi?",
+      "items": [
+        {
+          "title": "Local Expertise",
+          "description": "Serving Givatayim and surrounding areas for over 15 years. I know the local community and understand your specific needs."
+        },
+        {
+          "title": "Honest Pricing",
+          "description": "Transparent, upfront pricing with no hidden fees. Free estimates and honest assessments of what needs to be done."
+        },
+        {
+          "title": "Quality Workmanship",
+          "description": "Every job is completed to the highest standards. I stand behind my work with satisfaction guarantees."
+        },
+        {
+          "title": "Reliable Service",
+          "description": "On-time appointments, clear communication, and dependable service you can count on every time."
+        },
+        {
+          "title": "Emergency Availability",
+          "description": "24/7 emergency services for urgent repairs. When something breaks, I'm here to help immediately."
+        },
+        {
+          "title": "Personal Touch",
+          "description": "As a local business owner, I treat every client like family. Your satisfaction is my top priority."
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "What Our Clients Say",
+      "description": "Don't just take our word for it - hear from satisfied customers across Givatayim",
+      "items": [
+        {
+          "name": "Sarah Cohen",
+          "role": "Busy Professional",
+          "content": "Avi fixed my washing machine on a Sunday evening when I had a mountain of laundry. He was professional, quick, and reasonably priced. Highly recommend!",
+          "avatar": "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80"
+        },
+        {
+          "name": "Moshe Levy",
+          "role": "Retired Resident",
+          "content": "As an elderly person, I appreciate Avi's patience and thorough explanations. He fixed my refrigerator and even showed me how to maintain it properly. Wonderful service!",
+          "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80"
+        },
+        {
+          "name": "Rachel Green",
+          "role": "Small Landlord",
+          "content": "I manage several rental properties and Avi has been my go-to handyman for years. He's reliable, honest, and does quality work. My tenants always appreciate his prompt service.",
+          "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80"
+        },
+        {
+          "name": "David Rosenberg",
+          "role": "Homeowner",
+          "content": "Avi came to fix a plumbing emergency at 10 PM on a Friday night. He was there within 30 minutes and had the problem solved quickly. That's the kind of service you can't put a price on.",
+          "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80"
+        }
+      ]
+    },
+    "contact": {
+      "title": "Get In Touch",
+      "description": "Ready to get your home repairs done right? Contact me today for a free consultation and estimate.",
+      "email": "avi@fixitwithavi.co.il",
+      "phone": "+972-50-123-4567",
+      "address": "Givatayim, Israel - Serving the entire Gush Dan area"
+    },
+    "footer": {
+      "tagline": "Your trusted partner for all home repair and maintenance needs in Givatayim",
+      "socialLinks": [
+        {
+          "platform": "WhatsApp",
+          "url": "https://wa.me/972501234567"
+        },
+        {
+          "platform": "Facebook",
+          "url": "https://facebook.com/fixitwithavi"
+        }
+      ]
+    }
+  },
+  "whatsappNumber": "972526495077",
+  "createdAt": "2025-07-26T12:02:50.466Z",
+  "updatedAt": "2025-07-26T12:02:50.466Z"
+}

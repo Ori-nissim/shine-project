@@ -2,7 +2,7 @@
 
 import React, { Suspense } from 'react';
 import dynamic from 'next/dynamic';
-import { DJHeroSection, DJAboutSection, DJMusicSection, DJEventsSection, DJGallerySection, DJSocialSection, DJContactSection, FloatingWhatsAppButton } from '@/components/dj-template';
+// Removed unused imports
 import { djSampleData } from '@/lib/template-defaults';
 
 // Dynamically import the DJ template to avoid SSR issues
