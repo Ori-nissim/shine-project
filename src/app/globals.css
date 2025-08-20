@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+/* FontAwesome Icons as CSS Classes */
+.fab.fa-instagram::before { content: "📷"; }
+.fab.fa-facebook-f::before { content: "📘"; }
+.fab.fa-twitter::before { content: "🐦"; }
+.fab.fa-youtube::before { content: "📺"; }
+.fab.fa-spotify::before { content: "🎵"; }
+.fab.fa-soundcloud::before { content: "🎧"; }
+.fab.fa-tiktok::before { content: "🎶"; }
+.fab.fa-twitch::before { content: "🎮"; }
+.fab.fa-apple::before { content: "🍎"; }
+.fab.fa-snapchat-ghost::before { content: "👻"; }
+.fab.fa-linkedin-in::before { content: "💼"; }
+.fab.fa-discord::before { content: "💬"; }
+.fas.fa-link::before { content: "🔗"; }
+.fas.fa-play::before { content: "▶️"; }
+.fas.fa-quote-left::before { content: "💬"; }
+.fas.fa-map-marker-alt::before { content: "📍"; }
+.fas.fa-city::before { content: "🏙️"; }
+.fas.fa-calendar::before { content: "📅"; }
+.fas.fa-clock::before { content: "🕐"; }
+.fas.fa-ticket-alt::before { content: "🎫"; }
+.fas.fa-share::before { content: "📤"; }
+.fas.fa-calendar-plus::before { content: "📅"; }
+.fas.fa-th::before { content: "🔲"; }
+.fas.fa-image::before { content: "🖼️"; }
+.fas.fa-video::before { content: "🎥"; }
+.fas.fa-expand::before { content: "⤢"; }
+.fas.fa-times::before { content: "✕"; }
+.fas.fa-external-link-alt::before { content: "🔗"; }
+.fas.fa-music::before { content: "🎵"; }
+.fas.fa-map-marker-alt::before { content: "📍"; }
+.fas.fa-location-dot::before { content: "📍"; }
+.fas.fa-calendar-check::before { content: "✅"; }
+.fas.fa-envelope::before { content: "✉️"; }
+.fas.fa-phone::before { content: "📞"; }
+.fas.fa-clock::before { content: "🕐"; }
+.fas.fa-user::before { content: "👤"; }
+.fas.fa-comment::before { content: "💬"; }
+.fas.fa-calendar-alt::before { content: "📅"; }
+.fas.fa-dollar-sign::before { content: "$"; }
+.fas.fa-paper-plane::before { content: "📤"; }
+.fas.fa-chevron-down::before { content: "▼"; }
+.fas.fa-chevron-up::before { content: "▲"; }
+.fas.fa-bars::before { content: "☰"; }
+.fas.fa-times::before { content: "✕"; }
+.fas.fa-search::before { content: "🔍"; }
+.fas.fa-heart::before { content: "❤️"; }
+.fas.fa-star::before { content: "⭐"; }
+.fas.fa-thumbs-up::before { content: "👍"; }
+.fas.fa-thumbs-down::before { content: "👎"; }
+.fas.fa-eye::before { content: "👁️"; }
+.fas.fa-download::before { content: "⬇️"; }
+.fas.fa-upload::before { content: "⬆️"; }
+.fas.fa-save::before { content: "💾"; }
+.fas.fa-edit::before { content: "✏️"; }
+.fas.fa-trash::before { content: "🗑️"; }
+.fas.fa-cog::before { content: "⚙️"; }
+.fas.fa-home::before { content: "🏠"; }
+.fas.fa-info::before { content: "ℹ️"; }
+.fas.fa-question::before { content: "❓"; }
+.fas.fa-exclamation::before { content: "❗"; }
+.fas.fa-check::before { content: "✅"; }
+.fas.fa-times::before { content: "❌"; }
+.fas.fa-warning::before { content: "⚠️"; }
+.fas.fa-bell::before { content: "🔔"; }
+.fas.fa-bookmark::before { content: "🔖"; }
+.fas.fa-share-alt::before { content: "📤"; }
+.fas.fa-print::before { content: "🖨️"; }
+.fas.fa-copy::before { content: "📋"; }
+.fas.fa-cut::before { content: "✂️"; }
+.fas.fa-paste::before { content: "📋"; }
+.fas.fa-undo::before { content: "↶"; }
+.fas.fa-redo::before { content: "↷"; }
+.fas.fa-zoom-in::before { content: "🔍+"; }
+.fas.fa-zoom-out::before { content: "🔍-"; }
+.fas.fa-rotate::before { content: "🔄"; }
+.fas.fa-flip::before { content: "🔄"; }
+.fas.fa-crop::before { content: "✂️"; }
+.fas.fa-filter::before { content: "🔍"; }
+.fas.fa-sort::before { content: "↕️"; }
+.fas.fa-sort-up::before { content: "↑"; }
+.fas.fa-sort-down::before { content: "↓"; }
+.fas.fa-sort-alpha-up::before { content: "A↑"; }
+.fas.fa-sort-alpha-down::before { content: "A↓"; }
+.fas.fa-sort-numeric-up::before { content: "1↑"; }
+.fas.fa-sort-numeric-down::before { content: "1↓"; }
+.fas.fa-sort-amount-up::before { content: "↑"; }
+.fas.fa-sort-amount-down::before { content: "↓"; }
+.fas.fa-random::before { content: "🔀"; }
+.fas.fa-repeat::before { content: "🔁"; }
+.fas.fa-redo-alt::before { content: "↻"; }
+.fas.fa-undo-alt::before { content: "↺"; }
+.fas.fa-sync::before { content: "🔄"; }
+.fas.fa-sync-alt::before { content: "🔄"; }
+.fas.fa-history::before { content: "📜"; }
+.fas.fa-clock::before { content: "🕐"; }
+.fas.fa-calendar::before { content: "📅"; }
+.fas.fa-calendar-day::before { content: "📅"; }
+.fas.fa-calendar-week::before { content: "📅"; }
+.fas.fa-calendar-month::before { content: "📅"; }
+.fas.fa-calendar-alt::before { content: "📅"; }
+.fas.fa-calendar-check::before { content: "✅"; }
+.fas.fa-calendar-times::before { content: "❌"; }
+.fas.fa-calendar-minus::before { content: "➖"; }
+.fas.fa-calendar-plus::before { content: "➕"; }
+.fas.fa-calendar-edit::before { content: "✏️"; }
+.fas.fa-calendar-exclamation::before { content: "❗"; }
+.fas.fa-calendar-xmark::before { content: "❌"; }
+.fas.fa-calendar-days::before { content: "📅"; }
+.fas.fa-calendar-day::before { content: "📅"; }
+.fas.fa-calendar-week::before { content: "📅"; }
+.fas.fa-calendar-month::before { content: "📅"; }
+.fas.fa-calendar-alt::before { content: "📅"; }
+.fas.fa-calendar-check::before { content: "✅"; }
+.fas.fa-calendar-times::before { content: "❌"; }
+.fas.fa-calendar-minus::before { content: "➖"; }
+.fas.fa-calendar-plus::before { content: "➕"; }
+.fas.fa-calendar-edit::before { content: "✏️"; }
+.fas.fa-calendar-exclamation::before { content: "❗"; }
+.fas.fa-calendar-xmark::before { content: "❌"; }
+.fas.fa-calendar-days::before { content: "📅"; }
+
+/* Custom styles for better icon display */
+.fab, .fas {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  display: inline-block;
+  text-align: center;
+}
+
+/* Social media specific colors */
+.fab.fa-instagram { color: #E4405F; }
+.fab.fa-facebook-f { color: #1877F2; }
+.fab.fa-twitter { color: #1DA1F2; }
+.fab.fa-youtube { color: #FF0000; }
+.fab.fa-spotify { color: #1DB954; }
+.fab.fa-soundcloud { color: #FF5500; }
+.fab.fa-tiktok { color: #000000; }
+.fab.fa-twitch { color: #9146FF; }
+.fab.fa-apple { color: #000000; }
+.fab.fa-snapchat-ghost { color: #FFFC00; }
+.fab.fa-linkedin-in { color: #0A66C2; }
+.fab.fa-discord { color: #5865F2; }
