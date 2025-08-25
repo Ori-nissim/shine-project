@@ -78,7 +78,7 @@ const DJHeroSection: React.FC<DJHeroSectionProps> = ({
           )
         ) : backgroundImage ? (
           <div 
-            className="w-full h-full object-cover opacity-50"
+            className="w-full h-full object-cover opacity-75"
             style={{
               backgroundImage: `url(${backgroundImage})`,
               backgroundSize: 'cover',
