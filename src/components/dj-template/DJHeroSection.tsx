@@ -93,94 +93,7 @@ const DJHeroSection: React.FC<DJHeroSectionProps> = ({
             }}
           />
         )}
-        
-        {/* Enhanced overlay with animated gradient - applied on top of image/video */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/60 via-slate-900/40 to-teal-900/60"></div>
-        
-        {/* Interactive cursor-responsive glow */}
-        {(
-          <motion.div
-            className="absolute w-96 h-96 bg-blue-500/20 rounded-full blur-3xl pointer-events-none"
-            animate={{
-              x: mousePosition.x - 192,
-              y: mousePosition.y - 192,
-            }}
-            transition={{ type: "spring", stiffness: 100, damping: 30 }}
-          />
-        )}
-
-        {/* Enhanced animated particles */}
-        <div className="absolute inset-0">
-          {[...Array(30)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-1 h-1 bg-blue-400/40 rounded-full"
-              animate={{
-                x: [0, Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000)],
-                y: [0, Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800)],
-                opacity: [0, 1, 0],
-                scale: [0, 1, 0],
-              }}
-              transition={{
-                duration: (i % 4) + 3,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-              style={{
-                left: `${(i * 3.33) % 100}%`,
-                top: `${(i * 2.5) % 100}%`,
-              }}
-            />
-          ))}
         </div>
-
-        {/* Floating geometric shapes */}
-        <div className="absolute inset-0">
-          {[...Array(8)].map((_, i) => (
-            <motion.div
-              key={`shape-${i}`}
-              className="absolute border border-blue-400/20"
-              style={{
-                width: 50 + (i * 10),
-                height: 50 + (i * 8),
-                left: `${(i * 12.5) % 100}%`,
-                top: `${(i * 15) % 100}%`,
-                borderRadius: i % 2 === 0 ? '50%' : '0%',
-              }}
-              animate={{
-                rotate: [0, 360],
-                scale: [0.8, 1.2, 0.8],
-                opacity: [0.1, 0.3, 0.1],
-              }}
-              transition={{
-                duration: 10 + (i * 2),
-                repeat: Infinity,
-                ease: "linear",
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Cursor-responsive grid lines */}
-        {(
-          <div className="absolute inset-0">
-            <svg className="w-full h-full" style={{ opacity: 0.1 }}>
-              <defs>
-                <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
-                  <path d="M 50 0 L 0 0 0 50" fill="none" stroke="blue" strokeWidth="1"/>
-                </pattern>
-              </defs>
-              <rect width="100%" height="100%" fill="url(#grid)" />
-            </svg>
-          </div>
-        )}
-
-        {/* Additional overlay for better text readability when image is used */}
-        {backgroundImage && (
-          <div className="absolute inset-0 bg-black/30"></div>
-        )}
-      </div>
-
       {/* Content */}
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         {/* Main Title */}
@@ -188,12 +101,38 @@ const DJHeroSection: React.FC<DJHeroSectionProps> = ({
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-5xl md:text-7xl lg:text-9xl font-black mb-6"
+          className="text-8xl md:text-10xl lg:text-[150px] font-black mb-6 relative"
           style={{ fontFamily: 'var(--font-bebas-neue)' }}
         >
-          <span className="bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">
+          {/* Text outline effect with multiple shadows */}
+          <span 
+            className="relative tracking-wider"
+            style={{
+              color: '#4A90E2',
+              textShadow: `
+                -3px -3px 0 #000000,
+                3px -3px 0 #000000,
+                -3px 3px 0 #000000,
+                3px 3px 0 #000000,
+                -2px -2px 0 #000000,
+                2px -2px 0 #000000,
+                -2px 2px 0 #000000,
+                2px 2px 0 #000000,
+                -1px -1px 0 #000000,
+                1px -1px 0 #000000,
+                -1px 1px 0 #000000,
+                1px 1px 0 #000000,
+                0 0 8px rgba(74, 144, 226, 0.6),
+                0 0 16px rgba(74, 144, 226, 0.4),
+                0 0 24px rgba(74, 144, 226, 0.2)
+              `,
+              filter: 'drop-shadow(0 0 8px rgba(74, 144, 226, 0.4))'
+            }}
+          >
             {title}
           </span>
+          
+
         </motion.h1>
 
         {/* Subtitle */}
@@ -201,7 +140,7 @@ const DJHeroSection: React.FC<DJHeroSectionProps> = ({
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-xl md:text-3xl text-gray-300 mb-8 font-light"
+          className="text-2xl md:text-4xl text-gray-100 mb-8 font-semibold [text-shadow:_-1px_-1px_0_#000,_1px_-1px_0_#000,_-1px_1px_0_#000,_1px_1px_0_#000]"
         >
           {subtitle}
         </motion.p>
@@ -218,11 +157,11 @@ const DJHeroSection: React.FC<DJHeroSectionProps> = ({
           }}
           whileTap={{ scale: 0.95 }}
           onClick={() => scrollToSection(ctaLink)}
-          className="relative bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-500 hover:to-teal-500 text-white font-semibold py-4 px-8 rounded-full text-xl md:text-2xl transition-all tracking-widest duration-300 transform hover:translate-y-[-2px] shadow-2xl overflow-hidden group"
+          className="relative bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-semibold py-4 px-8 rounded-full text-xl md:text-2xl transition-all tracking-widest duration-300 transform hover:translate-y-[-2px] shadow-2xl overflow-hidden group"
         >
           {/* Button glow effect */}
           <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-blue-400 to-teal-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300"
+            className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-500 opacity-0 group-hover:opacity-15 transition-opacity duration-300"
             animate={{
               x: [0, 100, 0],
             }}

@@ -1,7 +1,6 @@
 import { compare, hash } from 'bcryptjs';
 import { SignJWT, jwtVerify } from 'jose';
 import { cookies } from 'next/headers';
-import { NewUser } from '@/lib/db/schema';
 import { SECURITY_CONFIG } from '@/lib/config/security';
 
 const key = new TextEncoder().encode(process.env.AUTH_SECRET);
@@ -95,12 +94,12 @@ export async function getSession() {
   }
 }
 
-export async function setSession(user: NewUser) {
+export async function setSession(userId: number) {
   const expiresInOneDay = new Date(Date.now() + SECURITY_CONFIG.SESSION.MAX_AGE);
   const sessionId = generateSessionId();
   
   const session: SessionData = {
-    user: { id: user.id! },
+    user: { id: userId },
     expires: expiresInOneDay.toISOString(),
     issuedAt: Date.now(),
     sessionId

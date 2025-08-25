@@ -121,21 +121,21 @@ const DJNavbar: React.FC<DJNavbarProps> = ({ logoText, socialLinks = [] }) => {
             whileHover={{ scale: 1.05 }}
             className="flex-shrink-0"
           >
-            <h1 className={`text-2xl font-bold bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent ${manrope.className} ${bebasNeue.variable}`}>
+            <h1 className={`text-2xl font-black bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent ${manrope.className} ${bebasNeue.variable}`}>
               {logoText }
             </h1>
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8 ">
+          <div className="hidden md:inline-block">
+            <div className="flex items-baseline gap-x-8">
               {navItems.map((item) => (
                 <motion.button
                   key={item.href}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => scrollToSection(item.href)}
-                  className={`text-gray-300 hover:text-white px-3 py-2 rounded-md text-xl font-medium transition-colors duration-200 ${rubik.className}`}
+                  className={`text-gray-100 hover:text-white px-3 py-2 rounded-md text-xl font-medium transition-colors duration-200 ${rubik.className} bg-gray-700/50 backdrop-blur-md`}
                 >
                   {item.label}
                 </motion.button>

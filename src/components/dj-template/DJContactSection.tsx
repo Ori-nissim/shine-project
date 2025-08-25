@@ -119,27 +119,6 @@ const DJContactSection: React.FC<DJContactSectionProps> = ({
                   </div>
                 </div>
 
-                <div className=''>
-                  <label htmlFor="eventType" className="block text-sm font-medium text-white mb-2 ">
-                    סוג אירוע
-                  </label>
-                  <select
-                    id="eventType"
-                    name="eventType"
-                    value={formData.eventType}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white/10 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-blue-500"
-                    style={{ colorScheme: 'dark' }}
-                  >
-                    <option value="" className="bg-black text-white hover:text-black">בחר סוג אירוע</option>
-                    <option value="wedding" className="bg-black text-white hover:text-black">חתונה</option>
-                    <option value="birthday" className="bg-black text-white hover:text-black">יום הולדת</option>
-                    <option value="corporate" className="bg-black text-white hover:text-black">אירוע חברה</option>
-                    <option value="club" className="bg-black text-white hover:text-black">מועדון</option>
-                    <option value="festival" className="bg-black text-white hover:text-black">פסטיבל</option>
-                    <option value="other" className="bg-black text-white hover:text-black">אחר</option>
-                  </select>
-                </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
@@ -155,20 +134,7 @@ const DJContactSection: React.FC<DJContactSectionProps> = ({
                       className="w-full px-4 py-3 bg-white/10 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-blue-500 transition-colors"
                     />
                   </div>
-                  <div>
-                    <label htmlFor="budget" className="block text-sm font-medium text-gray-300 mb-2">
-                      תקציב (אופציונלי)
-                    </label>
-                    <input
-                      type="text"
-                      id="budget"
-                      name="budget"
-                      value={formData.budget}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-white/10 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition-colors"
-                      placeholder="תקציב משוער"
-                    />
-                  </div>
+                 
                 </div>
 
                 <div>
@@ -217,7 +183,7 @@ const DJContactSection: React.FC<DJContactSectionProps> = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.02 }}
-                  className="flex items-center space-x-4 p-4 bg-green-600/20 hover:bg-green-600/30 rounded-lg transition-colors duration-200 cursor-pointer"
+                  className="flex items-center space-x-2 gap-x-4  p-4 bg-green-600/20 hover:bg-green-600/30 rounded-lg transition-colors duration-200 cursor-pointer"
                 >
                   <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
                     <svg 
@@ -244,7 +210,7 @@ const DJContactSection: React.FC<DJContactSectionProps> = ({
                   <motion.a
                     href={`mailto:${email}`}
                     whileHover={{ scale: 1.02 }}
-                    className="flex items-center space-x-4 p-4 bg-blue-600/20 hover:bg-blue-600/30 rounded-lg transition-colors duration-200 cursor-pointer"
+                    className="flex items-center space-x-2 gap-x-4 p-4 bg-blue-600/20 hover:bg-blue-600/30 rounded-lg transition-colors duration-200 cursor-pointer"
                   >
                     <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
                       <svg 
@@ -269,44 +235,7 @@ const DJContactSection: React.FC<DJContactSectionProps> = ({
               </div>
             </div>
 
-            {/* Response Time */}
-            <div className="bg-gradient-to-br from-teal-900/30 to-blue-900/30 rounded-2xl p-8 border border-teal-500/20">
-              <h3 className="text-xl font-bold text-white mb-4">זמני תגובה</h3>
-              <div className="space-y-3 text-gray-300">
-                <div className="flex gap-x-3">
-                  <span>WhatsApp:</span>
-                  <span className="text-green-400">תוך שעה</span>
-                </div>
-                <div className="flex gap-x-3">
-                  <span>אימייל:</span>
-                  <span className="text-blue-400">תוך 24 שעות</span>
-                </div>
-                
-              </div>
-            </div>
-
-            {/* Location */}
-            <div className="bg-gradient-to-br from-slate-900/50 to-gray-900/50 rounded-2xl p-8 border border-gray-600/20">
-              <h3 className="text-xl font-bold text-white mb-4">אזור פעילות</h3>
-              <div className="space-y-3 text-gray-300">
-                <div className="flex items-center space-x-3">
-                 
-                  <span>תל אביב והמרכז</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                
-                  <span>ירושלים והסביבה</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                
-                  <span>חיפה והצפון</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                 
-                  <span>באר שבע והדרום</span>
-                </div>
-              </div>
-            </div>
+          
           </motion.div>
         </div>
       </div>

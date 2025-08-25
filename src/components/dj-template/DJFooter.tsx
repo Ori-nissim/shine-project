@@ -23,9 +23,9 @@ const DJFooter: React.FC<DJFooterProps> = ({ className = '' }) => {
             </div>
             
             {/* Tagline with heart */}
-            <div className="flex items-center justify-center space-x-2 text-lg text-gray-300">
+            <div className="flex flex-wrap items-center justify-center gap-2 text-lg text-gray-300">
               <span>Designed and tailored for you with</span>
-              <Heart className="w-5 h-5 text-red-500 fill-red-500 animate-pulse" />
+              <Heart className="w-5 h-5 text-red-500 fill-red-500" />
               <span>by Shine</span>
             </div>
             

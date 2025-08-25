@@ -29,7 +29,6 @@ const DJTemplate: React.FC<DJTemplateProps> = ({
   useEffect(() => {
     setIsClient(true);
   }, []);
-console.log("whatsappNumber", whatsappNumber)
   // Show loading state until client-side hydration is complete
   if (!isClient) {
     return (

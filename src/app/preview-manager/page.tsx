@@ -49,11 +49,12 @@ export default function PreviewManagerPage() {
     }
   }, [authState.isAuthenticated]);
 
-  // Debug template selection
+  // Load default data when template changes and no data exists
   useEffect(() => {
-    console.log('Current selected template:', selectedTemplate);
-    console.log('Available templates:', availableTemplates);
-  }, [selectedTemplate, availableTemplates]);
+    if (selectedTemplate && !jsonData && authState.isAuthenticated) {
+      loadDefaultData();
+    }
+  }, [selectedTemplate, authState.isAuthenticated]);
 
   const checkAuthStatus = async () => {
     try {
@@ -106,6 +107,7 @@ export default function PreviewManagerPage() {
       setKey('');
       setJsonData('');
       setPreviewUrl('');
+      setSelectedTemplate('inspiration-site');
     } catch (error) {
       console.error('Logout error:', error);
     }
@@ -116,13 +118,60 @@ export default function PreviewManagerPage() {
       setIsLoadingTemplates(true);
       const response = await fetch('/api/templates');
       const data = await response.json();
-      console.log('Templates API response:', data);
-      if (data.success) {
+      
+      if (data.success && data.templates && data.templates.length > 0) {
         setAvailableTemplates(data.templates);
-        console.log('Set available templates:', data.templates);
+        // Set first template as default if none selected
+        if (!selectedTemplate || !data.templates.find((t: TemplateInfo) => t.id === selectedTemplate)) {
+          setSelectedTemplate(data.templates[0].id);
+        }
+      } else {
+        // Fallback to hardcoded templates if API fails
+        const fallbackTemplates = [
+          {
+            id: 'inspiration-site',
+            name: 'Inspiration Site',
+            description: 'Professional business website template',
+            category: 'business',
+            hasTypes: true,
+            hasReadme: false
+          },
+          {
+            id: 'dj-template',
+            name: 'DJ Template',
+            description: 'Bold, animated music artist website',
+            category: 'creative',
+            hasTypes: true,
+            hasReadme: true
+          }
+        ];
+        setAvailableTemplates(fallbackTemplates);
+        if (!selectedTemplate || !fallbackTemplates.find(t => t.id === selectedTemplate)) {
+          setSelectedTemplate('inspiration-site');
+        }
       }
     } catch (error) {
       console.error('Error loading templates:', error);
+      // Fallback to hardcoded templates
+      const fallbackTemplates = [
+        {
+          id: 'inspiration-site',
+          name: 'Inspiration Site',
+          description: 'Professional business website template',
+          category: 'business',
+          hasTypes: true,
+          hasReadme: false
+        },
+        {
+          id: 'dj-template',
+          name: 'DJ Template',
+          description: 'Bold, animated music artist website',
+          category: 'creative',
+          hasTypes: true,
+          hasReadme: true
+        }
+      ];
+      setAvailableTemplates(fallbackTemplates);
     } finally {
       setIsLoadingTemplates(false);
     }
@@ -180,13 +229,6 @@ export default function PreviewManagerPage() {
       return;
     }
     
-    console.log('Submitting preview with:', {
-      key: key.trim(),
-      template: selectedTemplate,
-      data: parsedData,
-      whatsappNumber: "972526495077"
-    });
-    
     setIsCreating(true);
     
     try {
@@ -208,11 +250,13 @@ export default function PreviewManagerPage() {
       if (data.success) {
         setPreviewUrl(data.previewUrl);
         loadPreviews(); // Refresh the list
+        alert('Preview created successfully!');
       } else {
-        alert('Error creating preview: ' + data.error);
+        alert('Error creating preview: ' + (data.error || 'Unknown error'));
       }
     } catch (error) {
-      alert('Error creating preview');
+      console.error('Error creating preview:', error);
+      alert('Error creating preview. Please check the console for details.');
     } finally {
       setIsCreating(false);
     }
@@ -224,23 +268,37 @@ export default function PreviewManagerPage() {
 
   const loadDefaultData = () => {
     setIsLoadingData(true);
-    setTimeout(() => {
+    try {
       const defaultData = getDefaultData();
       console.log(`Loading default data for template: ${selectedTemplate}`, defaultData);
-      console.log('Template info:', getTemplateInfo(selectedTemplate));
       setJsonData(JSON.stringify(defaultData, null, 2));
+    } catch (error) {
+      console.error('Error loading default data:', error);
+      alert('Error loading default data. Please try again.');
+    } finally {
       setIsLoadingData(false);
-    }, 100);
+    }
   };
 
-  // Auto-load template-specific data when template changes
-  useEffect(() => {
-    console.log('useEffect triggered - selectedTemplate:', selectedTemplate, 'jsonData:', jsonData ? 'has data' : 'empty');
-    if (selectedTemplate && !jsonData) {
-      console.log('Auto-loading default data for template:', selectedTemplate);
-      loadDefaultData();
+  const handleTemplateChange = (newTemplate: string) => {
+    console.log('Template changing from', selectedTemplate, 'to', newTemplate);
+    setSelectedTemplate(newTemplate);
+    // Clear current data when template changes
+    setJsonData('');
+    setPreviewUrl('');
+  };
+
+  const testDJData = () => {
+    try {
+      const djData = getTemplateDefaultData('dj-template');
+      console.log('Testing DJ template data:', djData);
+      setJsonData(JSON.stringify(djData, null, 2));
+      setSelectedTemplate('dj-template');
+    } catch (error) {
+      console.error('Error testing DJ data:', error);
+      alert('Error loading DJ template data');
     }
-  }, [selectedTemplate, jsonData]);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-950 relative overflow-hidden">
@@ -351,15 +409,7 @@ export default function PreviewManagerPage() {
                   </label>
                   <select
                     value={selectedTemplate}
-                    onChange={(e) => {
-                      const newTemplate = e.target.value;
-                      console.log('Template changed to:', newTemplate);
-                      console.log('Previous template was:', selectedTemplate);
-                      setSelectedTemplate(newTemplate);
-                      // Clear current data when template changes
-                      setJsonData('');
-                      console.log('JSON data cleared, new template set to:', newTemplate);
-                    }}
+                    onChange={(e) => handleTemplateChange(e.target.value)}
                     disabled={isLoadingTemplates}
                     className="w-full px-4 py-3 border border-gray-600 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all duration-200 bg-gray-800/50 backdrop-blur-sm text-white disabled:opacity-50"
                   >
@@ -403,7 +453,7 @@ export default function PreviewManagerPage() {
                       </p>
                       <div className="mt-3 pt-3 border-t border-gray-700/50">
                         <p className="text-xs text-gray-400">
-                          Default data: {getTemplateInfo(selectedTemplate).sampleDataName || 'Template-specific data'}
+                          Default data: {getTemplateInfo(selectedTemplate)?.sampleDataName || 'Template-specific data'}
                         </p>
                       </div>
                     </div>
@@ -437,31 +487,26 @@ export default function PreviewManagerPage() {
                   <label className="block text-sm font-semibold text-gray-300 mb-3">
                     JSON Data
                   </label>
-                  <div className="space-y-3 ">
+                  <div className="space-y-3">
                     <div className="grid md:grid-cols-3 gap-3 grid-cols-2 grid-rows-2 md:grid-rows-1">
                       <button
                         type="button"
                         onClick={() => fileInputRef.current?.click()}
-                        className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl font-semibold"
+                        className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl font-semibold text-sm"
                       >
                         Upload JSON File
                       </button>
                       <button
                         type="button"
                         onClick={loadDefaultData}
-                        className="px-6 py-3 bg-gradient-to-r from-gray-500 to-gray-600 text-white rounded-xl hover:from-gray-600 hover:to-gray-700 transition-all duration-200 shadow-lg hover:shadow-xl font-semibold"
+                        className="px-6 py-3 bg-gradient-to-r from-gray-500 to-gray-600 text-white rounded-xl hover:from-gray-600 hover:to-gray-700 transition-all duration-200 shadow-lg hover:shadow-xl font-semibold text-sm"
                       >
-                        {isLoadingData ? 'Loading...' : `Load ${getTemplateInfo(selectedTemplate).sampleDataName || 'Default'} Data`}
+                        {isLoadingData ? 'Loading...' : `Load ${getTemplateInfo(selectedTemplate)?.sampleDataName || 'Default'} Data`}
                       </button>
                       <button
                         type="button"
-                        onClick={() => {
-                          console.log('Testing DJ template data...');
-                          const djData = getTemplateDefaultData('dj-template');
-                          console.log('DJ template data:', djData);
-                          setJsonData(JSON.stringify(djData, null, 2));
-                        }}
-                        className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-xl hover:from-purple-600 hover:to-pink-700 transition-all duration-200 shadow-lg hover:shadow-xl font-semibold"
+                        onClick={testDJData}
+                        className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-xl hover:from-purple-600 hover:to-pink-700 transition-all duration-200 shadow-lg hover:shadow-xl font-semibold text-sm"
                       >
                         Test DJ Data
                       </button>

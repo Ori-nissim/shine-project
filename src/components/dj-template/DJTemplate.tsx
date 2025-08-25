@@ -14,30 +14,69 @@ import FloatingWhatsAppButton from './FloatingWhatsAppButton';
 
 interface DJTemplateProps {
   data: {
-    name: string;
-    tagline: string;
-    about: string;
+    hero: {
+      title: string;
+      subtitle: string;
+      ctaText: string;
+      ctaLink: string;
+      backgroundVideo?: string;
+      backgroundImage?: string;
+    };
+    about: {
+      title: string;
+      description: string;
+      quote: string;
+      image: string;
+    };
     music: {
-      genres: string[];
-      platforms: string[];
-      tracks?: Array<{
+      title: string;
+      description: string;
+      tracks: Array<{
         title: string;
         artist: string;
         coverImage: string;
-        spotifyUrl?: string;
-        soundcloudUrl?: string;
+        spotifyUrl: string;
         releaseDate: string;
-        duration?: string;
+        duration: string;
       }>;
     };
     events: {
-      name: string;
-      date: string;
-      location: string;
-    }[];
+      title: string;
+      description: string;
+      upcomingEvents: Array<{
+        title: string;
+        venue: string;
+        city: string;
+        date: string;
+        time: string;
+        ticketUrl: string;
+        image: string;
+      }>;
+    };
+    gallery: {
+      title: string;
+      description: string;
+      media: Array<{
+        type: string;
+        url: string;
+        title: string;
+        description: string;
+      }>;
+    };
+    social: {
+      title: string;
+      links: Array<{
+        platform: string;
+        url: string;
+        icon: string;
+      }>;
+    };
     contact: {
+      title: string;
+      description: string;
+      whatsappNumber: string;
       email: string;
-      phone: string;
+      bookingEmail: string;
     };
   };
   whatsappNumber: string;
@@ -46,19 +85,45 @@ interface DJTemplateProps {
 const DJTemplate: React.FC<DJTemplateProps> = ({ data, whatsappNumber }) => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800">
-      <DJNavbar name={data.name} />
-      <DJHeroSection name={data.name} tagline={data.tagline} />
-      <DJAboutSection about={data.about} />
-      <DJMusicSection 
-        title="המוזיקה שלי"
-        description="גלה את הצלילים הייחודיים שלי"
-        tracks={data.music.tracks || []}
+      <DJNavbar logoText={data.hero.title} socialLinks={data.social.links} />
+      <DJHeroSection 
+        title={data.hero.title}
+        subtitle={data.hero.subtitle}
+        ctaText={data.hero.ctaText}
+        ctaLink={data.hero.ctaLink}
+        backgroundVideo={data.hero.backgroundVideo}
+        backgroundImage={data.hero.backgroundImage}
       />
-      <DJEventsSection events={data.events} />
-      <DJGallerySection />
-      <DJSocialSection />
-      <DJContactSection contact={data.contact} />
-      <DJFooter name={data.name} />
+      <DJAboutSection 
+        title={data.about.title}
+        description={data.about.description}
+        quote={data.about.quote}
+        image={data.about.image}
+      />
+      <DJMusicSection 
+        title={data.music.title}
+        description={data.music.description}
+        tracks={data.music.tracks}
+      />
+      <DJEventsSection 
+        title={data.events.title}
+        description={data.events.description}
+        events={data.events.upcomingEvents}
+      />
+      <DJGallerySection 
+        title={data.gallery.title}
+        description={data.gallery.description}
+        media={data.gallery.media}
+      />
+      <DJSocialSection links={data.social.links} />
+      <DJContactSection 
+        title={data.contact.title}
+        description={data.contact.description}
+        whatsappNumber={data.contact.whatsappNumber}
+        email={data.contact.email}
+        bookingEmail={data.contact.bookingEmail}
+      />
+      <DJFooter />
       <FloatingWhatsAppButton phoneNumber={whatsappNumber} />
     </div>
   );
