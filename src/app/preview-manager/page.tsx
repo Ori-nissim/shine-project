@@ -241,7 +241,7 @@ export default function PreviewManagerPage() {
           key: key.trim(),
           template: selectedTemplate,
           data: parsedData,
-          whatsappNumber: "972526495077"
+          whatsappNumber: "972546104210"
         }),
       });
       

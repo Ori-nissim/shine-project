@@ -78,7 +78,7 @@ const DJHeroSection: React.FC<DJHeroSectionProps> = ({
           )
         ) : backgroundImage ? (
           <div 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover opacity-50"
             style={{
               backgroundImage: `url(${backgroundImage})`,
               backgroundSize: 'cover',
@@ -108,7 +108,7 @@ const DJHeroSection: React.FC<DJHeroSectionProps> = ({
           <span 
             className="relative tracking-wider"
             style={{
-              color: '#4A90E2',
+              color: '#00D4FF',
               textShadow: `
                 -3px -3px 0 #000000,
                 3px -3px 0 #000000,
@@ -122,11 +122,12 @@ const DJHeroSection: React.FC<DJHeroSectionProps> = ({
                 1px -1px 0 #000000,
                 -1px 1px 0 #000000,
                 1px 1px 0 #000000,
-                0 0 8px rgba(74, 144, 226, 0.6),
-                0 0 16px rgba(74, 144, 226, 0.4),
-                0 0 24px rgba(74, 144, 226, 0.2)
+                0 0 8px rgba(0, 212, 255, 0.8),
+                0 0 16px rgba(0, 212, 255, 0.6),
+                0 0 24px rgba(0, 212, 255, 0.4),
+                0 0 32px rgba(0, 212, 255, 0.2)
               `,
-              filter: 'drop-shadow(0 0 8px rgba(74, 144, 226, 0.4))'
+              filter: 'drop-shadow(0 0 12px rgba(0, 212, 255, 0.6))'
             }}
           >
             {title}
@@ -140,7 +141,19 @@ const DJHeroSection: React.FC<DJHeroSectionProps> = ({
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-2xl md:text-4xl text-gray-100 mb-8 font-semibold [text-shadow:_-1px_-1px_0_#000,_1px_-1px_0_#000,_-1px_1px_0_#000,_1px_1px_0_#000]"
+          className="text-2xl md:text-4xl mb-8 font-semibold"
+          style={{
+            color: '#e1e1e1',
+            textShadow: `
+              -2px -2px 0 #000000,
+              2px -2px 0 #000000,
+              -2px 2px 0 #000000,
+              2px 2px 0 #000000,
+              0 0 8px rgba(0, 230, 204, 0.8),
+              0 0 16px rgba(0, 230, 204, 0.4)
+            `,
+            filter: 'drop-shadow(0 0 8px rgba(0, 230, 204, 0.6))'
+          }}
         >
           {subtitle}
         </motion.p>
@@ -152,16 +165,23 @@ const DJHeroSection: React.FC<DJHeroSectionProps> = ({
           transition={{ duration: 0.8, delay: 0.4 }}
           whileHover={{ 
             scale: 1.05, 
-            boxShadow: "0 0 40px rgba(59, 130, 246, 0.6)",
-            textShadow: "0 0 10px rgba(255, 255, 255, 0.5)"
+            boxShadow: "0 0 40px rgba(0, 212, 255, 0.8)",
+            textShadow: "0 0 10px rgba(255, 255, 255, 0.8)"
           }}
           whileTap={{ scale: 0.95 }}
           onClick={() => scrollToSection(ctaLink)}
-          className="relative bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-semibold py-4 px-8 rounded-full text-xl md:text-2xl transition-all tracking-widest duration-300 transform hover:translate-y-[-2px] shadow-2xl overflow-hidden group"
+          className="relative text-white font-semibold py-4 px-8 rounded-full text-xl md:text-2xl transition-all tracking-widest duration-300 transform hover:translate-y-[-2px] shadow-2xl overflow-hidden group"
+          style={{
+            background: 'linear-gradient(135deg, #00D4FF 0%, #00E6CC 50%, #00B8D4 100%)',
+            boxShadow: '0 0 20px rgba(0, 212, 255, 0.6), 0 0 40px rgba(0, 230, 204, 0.4)'
+          }}
         >
           {/* Button glow effect */}
           <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-500 opacity-0 group-hover:opacity-15 transition-opacity duration-300"
+            className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300"
+            style={{
+              background: 'linear-gradient(135deg, #00D4FF 0%, #00E6CC 50%, #00B8D4 100%)'
+            }}
             animate={{
               x: [0, 100, 0],
             }}

@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
       key,
       template: template as string,
       data: data,
-      whatsappNumber: whatsappNumber || "972526495077",
+      whatsappNumber: whatsappNumber || "972546104210",
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     };

@@ -77,7 +77,7 @@ export const djSampleData = {
         "city": "כל הארץ",
         "date": "זמין כל השנה",
         "time": "לפי בחירתכם",
-        "ticketUrl": "https://wa.me/972526495077",
+        "ticketUrl": "https://wa.me/972546104210",
         "image": "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=400&auto=format&fit=crop"
       },
       {
@@ -86,7 +86,7 @@ export const djSampleData = {
         "city": "תל אביב והמרכז",
         "date": "זמין כל השנה",
         "time": "לפי בחירתכם",
-        "ticketUrl": "https://wa.me/972526495077",
+        "ticketUrl": "https://wa.me/972546104210",
         "image": "https://plus.unsplash.com/premium_photo-1664278686142-15b6ee0c0b80?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDF8fHBhcnR5JTIwY3Jvd2R8ZW58MHx8MHx8fDA%3D"
       },
       {
@@ -95,7 +95,7 @@ export const djSampleData = {
         "city": "כל הארץ",
         "date": "זמין כל השנה",
         "time": "לפי בחירתכם",
-        "ticketUrl": "https://wa.me/972526495077",
+        "ticketUrl": "https://wa.me/972546104210",
         "image": "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=400&auto=format&fit=crop"
       },
       {
@@ -104,7 +104,7 @@ export const djSampleData = {
         "city": "תל אביב והסביבה",
         "date": "זמין כל השנה",
         "time": "לפי בחירתכם",
-        "ticketUrl": "https://wa.me/972526495077",
+        "ticketUrl": "https://wa.me/972546104210",
         "image": "https://images.unsplash.com/photo-1648052845307-61eb1450f1bc?q=80&w=1144&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       }
     ]
@@ -224,7 +224,7 @@ export const djSampleData = {
       },
       {
         "platform": "whatsapp",
-        "url": "https://wa.me/972526495077",
+        "url": "https://wa.me/972546104210",
         "icon": "fab fa-whatsapp"
       },
       {

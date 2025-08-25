@@ -80,7 +80,7 @@
           "city": "כל הארץ",
           "date": "זמין כל השנה",
           "time": "לפי בחירתכם",
-          "ticketUrl": "https://wa.me/972526495077",
+          "ticketUrl": "https://wa.me/972546104210",
           "image": "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=400&auto=format&fit=crop"
         },
         {
@@ -89,7 +89,7 @@
           "city": "תל אביב והמרכז",
           "date": "זמין כל השנה",
           "time": "לפי בחירתכם",
-          "ticketUrl": "https://wa.me/972526495077",
+          "ticketUrl": "https://wa.me/972546104210",
           "image": "https://images.unsplash.com/photo-1464207687429-7505649dae38?q=80&w=400&auto=format&fit=crop"
         },
         {
@@ -98,7 +98,7 @@
           "city": "כל הארץ",
           "date": "זמין כל השנה",
           "time": "לפי בחירתכם",
-          "ticketUrl": "https://wa.me/972526495077",
+          "ticketUrl": "https://wa.me/972546104210",
           "image": "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=400&auto=format&fit=crop"
         },
         {
@@ -107,7 +107,7 @@
           "city": "תל אביב והסביבה",
           "date": "זמין כל השנה",
           "time": "לפי בחירתכם",
-          "ticketUrl": "https://wa.me/972526495077",
+          "ticketUrl": "https://wa.me/972546104210",
           "image": "https://images.unsplash.com/photo-1501281668545-f6f261205a73?q=80&w=400&auto=format&fit=crop"
         }
       ]
@@ -179,7 +179,7 @@
         },
         {
           "platform": "whatsapp",
-          "url": "https://wa.me/972526495077",
+          "url": "https://wa.me/972546104210",
           "icon": "fab fa-whatsapp"
         },
         {
@@ -192,7 +192,7 @@
     "contact": {
       "title": "צרו קשר",
       "description": "להזמנות ופרטים נוספים, אשמח לשמוע מכם.",
-      "whatsappNumber": "972526495077",
+      "whatsappNumber": "972546104210",
       "email": "booking@djdaniel.co.il",
       "bookingEmail": "info@djdaniel.co.il"
     },
@@ -201,7 +201,7 @@
       "description": "Complete DJ website with music, events, gallery, and social links"
     }
   },
-  "whatsappNumber": "972526495077",
+  "whatsappNumber": "972546104210",
   "createdAt": "2025-08-06T18:52:02.445Z",
   "updatedAt": "2025-08-06T18:52:02.445Z"
 }

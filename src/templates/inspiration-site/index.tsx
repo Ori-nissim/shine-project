@@ -19,7 +19,7 @@ interface InspirationSiteTemplateProps {
 
 const InspirationSiteTemplate: React.FC<InspirationSiteTemplateProps> = ({ 
   data, 
-  whatsappNumber = "972526495077" 
+  whatsappNumber = "972546104210" 
 }) => {
   // Transform data to match existing component interfaces with defaults
   const heroProps = {
